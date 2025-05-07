@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pretraga Knjiga - Školska Knjižnica</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Pretraga Knjiga</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="pretraga.html">Pretraga knjiga</a></li>
+                <li><a href="rezervacija.html">Rezervacija knjiga</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="pretraga">
+        <h2>Pretražite naš katalog knjiga</h2>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Unesite ime ili prezime autora">
+            <button id="searchButton">Pretraži</button>
+        </div>
+
+        <div class="table-container">
+            <table id="booksTable" class="display">
+                <thead>
+                    <tr>
+                        <th>AUTOR</th>
+                        <th>NASLOV_MJESTO_GODINA</th>
+                        <th>SIGNATURA</th>
+                        <th>DOBAVLJAČ</th>
+                        <th>DATUM</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Školska Knjižnica</p>
+    </footer>
+
+    <script>
+    $(document).ready(function() {
+        var table = $('#booksTable').DataTable({
+            "dom": 'lrtip',
+            "processing": true,
+            "serverSide": true,
+            "ajax": {
+                "url": "pretraga_knjiga.php",
+                "type": "POST",
+                "data": function(d) {
+                    d.searchTerm = $('#searchInput').val();
+                }
+            },
+            "columns": [
+                { "data": "PREZIME I IME AUTORA" },
+                { "data": "NASLOV_mjesto_godina" },
+                { "data": "SIGNATURA" },
+                { "data": "DOBAVLJAČ" },
+                { "data": "DATUM" }
+            ],
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/hr.json"
+            }
+        });
+
+        $('#searchButton').click(function() {
+            table.ajax.reload();
+        });
+
+        $('#searchInput').keypress(function(e) {
+            if(e.which == 13) {
+                table.ajax.reload();
+            }
+        });
+    });
+    </script>
+</body>
+</html>
