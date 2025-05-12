@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Početna - Školska Knjižnica</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+    <header>
+        <h1>Početna</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Početna</a></li>
+                <li><a href="pretraga.html">Pretraga knjiga</a></li>
+                <li><a href="rezervacija.html">Rezervacija knjiga</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="o-knjiznici">
+            <h2>O našoj knjižnici</h2>
+            <p>
+                Naša školska knjižnica je mjesto znanja, istraživanja i inspiracije. 
+            </p>
+        
+            <p>
+                U ponudi imamo preko 3000 naslova domaće i svjetske književnosti, 
+                stručne literature i popularno-znanstvenih knjiga.
+            </p>
+        
+            <p>
+                Potičemo učenike na čitanje, istraživanje i kreativno izražavanje.
+            </p>
+        
+            <p>
+                Uz našu fizičku knjižnicu obuhvaćamo i <strong>virtualnu knjižnicu</strong> dostupnu putem Google Sites platforme, gdje učenici mogu pronaći brojne korisne sadržaje.
+            </p>
+        
+            <ul>
+                <li>Lektire i ostale knjige – obvezna i dodatna literatura</li>
+                <li>Referentna zbirka – priručnici i enciklopedije</li>
+                <li>Jezični savjeti – pomoć pri pravilnoj upotrebi jezika</li>
+                <li>Medijska pismenost – kritičko vrednovanje medijskih sadržaja</li>
+                <li>Smjernice za izradu seminarskih i maturalnih radova</li>
+                <li>Preporuke za čitanje i aktivnosti u slobodno vrijeme</li>
+            </ul>
+        
+            <p>
+                Knjižničarka škole je <strong>Maša Čiča</strong>, dostupna za konzultacije i pomoć u korištenju knjižničnih resursa.
+            </p>
+        </section>
+        
+
+        <section id="galerija">
+            <h2>Izgled naše knjižnice</h2>
+            <div class="galerija-slika">
+                <img src="Slike knjiznice/knjiznica1.jpeg" alt="Knjižnica 1" onclick="openLightbox(this.src)">
+                <img src="Slike knjiznice/knjiznica2.jpeg" alt="Knjižnica 2" onclick="openLightbox(this.src)">
+                <img src="Slike knjiznice/knjiznica3.jpeg" alt="Knjižnica 3" onclick="openLightbox(this.src)">
+                <img src="Slike knjiznice/knjiznica4.jpeg" alt="Knjižnica 3" onclick="openLightbox(this.src)">
+                <img src="Slike knjiznice/knjiznica5.jpeg" alt="Knjižnica 3" onclick="openLightbox(this.src)">
+            </div>
+        
+            <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+                <img id="lightbox-img" src="" alt="Povećana slika">
+            </div>
+        </section>
+        
+        
+
+        <section id="kontakt">
+            <h2>Kontakt informacije</h2>
+            <p>Možete nas kontaktirati putem sljedećih kanala:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:skola@ss-gospodarska-buje.skole.hr">skola@ss-gospodarska-buje.skole.hr</a></li>
+                <li><strong>Telefon:</strong> +385 52 772 077 </li>
+                <li><strong>Adresa:</strong> Školski Brijeg 1, 52460 Buje</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Školska Knjižnica</p>
+    </footer>
+</body>
+</html>
